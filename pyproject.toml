@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cworthy"
+version = "0.1.0"
+authors = [
+    { name="Junsu Park", email="junsu489@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.13"
+
+[tool.setuptools.packages.find]
+where = ["cworthy"]
+
+[tool.black]
+line-length = 100
+
+[tool.isort]
+profile = "black"
+
+[tool.pylint.main]
+load-plugins = ["pylint.extensions.docparams"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
